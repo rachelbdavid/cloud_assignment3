@@ -1,6 +1,5 @@
 # cloud_assignment3
-1. Creating project
---------------------
+## 1. Creating project
 * A google cloud platform project is needed. If you don't have one follow the steps to create it.
 * In the navigation menu, select IAM & Admin -> Manage resources.
 * Click on Create Project.
@@ -9,8 +8,7 @@
 * If your mail-id is personal, it will be set to No organization by default.
 * Click on Create after giving the needed details.
 
-2. Loading data into BigQuery
------------------------------
+## 2. Loading data into BigQuery
 From navigation menu, go to ```BigQuery```.
 * Creating dataset
 	* Select the project name from the top of the console.
@@ -30,8 +28,7 @@ From navigation menu, go to ```BigQuery```.
 		* Auto-detect: Select auto-detect checkbox - Schema and input parameters
 * Click Create Table.
 
-3. Creating dataset
---------------------
+## 3. Creating dataset
 * Creating ML dataset
 	* In the navigation menu, click on ```Vertex AI``` under Artificial intelligence.
 	* In the dashboard, select Region as ```europe-west4(Netherlands)```.
@@ -46,8 +43,7 @@ From navigation menu, go to ```BigQuery```.
 	* Click on continue.
 	* Now the details of the dataset will be visible. In order to run the statistical analysis, click on ```Generate Statistics```.
 
-4. Custom training package using Notebooks
-------------------------------------------
+## 4. Custom training package using Notebooks
 * Creating notebook instance
 	* Select Workbench from left pane and click on New Notebook.
 	* Select Python3 and on the pop up, leave it to default values and click Create.
@@ -60,8 +56,8 @@ From navigation menu, go to ```BigQuery```.
 		touch /home/jupyter/titanic/setup.py /home/jupyter/titanic/trainer/__init__.py /home/jupyter/titanic/trainer/task.py
 	```
 	* After running these commands you can see now folders created.
-	* Copy paste the task.py code in titanic/trainer/task.py
-	* Copy paste the setup.py code in titanic/setup.py
+	* Copy paste the [task.py](https://github.com/rachelbdavid/cloud_assignment3/blob/main/code/task.py) code in titanic/trainer/task.py
+	* Copy paste the [setup.py](https://github.com/rachelbdavid/cloud_assignment3/blob/main/code/setup.py) code in titanic/setup.py
 	* Copy paste these four commands in terminal to create a bucket in your current project:
 	```
 		export REGION="europe-west4"
@@ -99,8 +95,7 @@ From navigation menu, go to ```BigQuery```.
 	```
 		gsutil cp dist/trainer-0.1.tar.gz "gs://"$BUCKET_NAME"/titanic/dist/trainer-0.1.tar.gz"
 	```
-5. Model training
------------------
+## 5. Model training
 * In the navigation menu, go to Vertex AI -> Training
 * Select Region as ```europe-west4(Netherlands)``` and click on Create displayed on the top of the console.
 * Training model
@@ -132,12 +127,10 @@ From navigation menu, go to ```BigQuery```.
 	* Model directory: ```gs://YOUR-BUCKET-NAME/titanic/trial/```
 * Click on Start training. It may take from 15 to 20 minutes.
 
-6. Model Evaluation
---------------------
+## 6. Model Evaluation
 After the training job completion artifacts will be exported under ```gs://YOUR-BUCKET-NAME/titanic/trial/``` You can inspect the report.txt file which contains evaluation metrics and classification report of the model. Don't edit any files.
 
-7. Model Deployment
--------------------
+## 7. Model Deployment
 * In the left pane, click on Models.
 * Click on the titanic model and DEPLOY TO ENDPOINT
 * Define your endpoint
@@ -150,8 +143,7 @@ After the training job completion artifacts will be exported under ```gs://YOUR-
 	* Machine type: Under Standard, n1-standard-4
 * Click CONTINUE and DEPLOY
 
-8. Model Prediction
--------------------
+## 8. Model Prediction
 * After the model is deployed you can see a text box for JSON request.
 * Copy paste this JSON query. And click on Predict:
 ```
