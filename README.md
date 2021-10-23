@@ -1,4 +1,5 @@
 # cloud_assignment3
+## _Create a machine learning model in the cloud to predict the future events from the stream data_
 ## 1. Creating project
 * A google cloud platform project is needed. If you don't have one follow the steps to create it.
 * In the navigation menu, select IAM & Admin -> Manage resources.
