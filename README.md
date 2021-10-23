@@ -66,7 +66,7 @@
 				pip install setuptools
 				python setup.py install
 			vii. Run the following training code to verify that it executes without issues
-      ```
+      ```terminal
 				python -m trainer.task -v \
 				    --model_param_kernel=linear \
 				    --model_dir="gs://"$BUCKET_NAME"/titanic/trial" \
@@ -135,7 +135,7 @@
 	8. Model Prediction
 		a. After the model is deployed you can see a text box for JSON request.
 		b. Copy paste this JSON query. And click on Predict
-    ```
+    ```json
 			{
 			    "instances": [
 			      ["male", 49.5, 30.6, 1, "C", "New York, NY", 0, 0], 
